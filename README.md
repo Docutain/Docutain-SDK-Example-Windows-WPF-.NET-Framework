@@ -1,6 +1,6 @@
 # Docutain SDK
 
-## Docutain SDK example app for Windows (Forms)
+## Docutain SDK example app for Windows (WPF)
 
 This example app shows how to integrate the [Docutain SDK for Windows](https://sdk.Docutain.com).
 
