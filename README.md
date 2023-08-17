@@ -14,7 +14,8 @@ The [Docutain SDK](https://SDK.docutain.com) is based on the world famous, succe
 
 ## License and Support
 
-The Docutain SDK is a commercial product and requires a paid license for production use. In order to get a trial license, please visit our website via [https://sdk.docutain.com/TrialLicense](https://sdk.docutain.com/TrialLicense?Source=65792) to generate a trial license key.
+The Docutain SDK is a commercial product and requires a paid license for production use. In order to get a trial license, please visit our website via [https://sdk.docutain.com/TrialLicense](https://sdk.docutain.com/TrialLicense?Source=4097)[image](https://github.com/Docutain/Docutain-SDK-Example-Windows-WPF-.NET-Framework/assets/131764101/ff891569-c276-4e36-9dcc-a98c526d6be5)
+) to generate a trial license key.
 
 If you need technical support of any kind, please contact us via [support.sdk@Docutain.com](mailto:support.sdk@Docutain.com).
 
