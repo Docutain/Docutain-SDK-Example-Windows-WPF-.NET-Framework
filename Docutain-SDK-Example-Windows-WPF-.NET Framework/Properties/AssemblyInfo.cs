@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Docutain-SDK-Example-Windows-WPF-.NET Framework")]
-[assembly: AssemblyCopyright("Gary")]
+[assembly: AssemblyCopyright("Copyright © INFOSOFT Informations - und Dokumentationssysteme GmbH 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

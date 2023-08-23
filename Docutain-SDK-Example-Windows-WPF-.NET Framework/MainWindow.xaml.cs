@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Shapes;
 
 namespace Docutain_SDK_Example_Windows_WPF_.NET_Framework
 {
@@ -23,19 +22,45 @@ namespace Docutain_SDK_Example_Windows_WPF_.NET_Framework
             //set log level according to your needs
             Docutain.SDK.Windows.Logger.SetLogLevel(Docutain.SDK.Windows.Logger.Level.Debug);
 
+            string License_Key = "<YOUR-LICENSE-KEY>";
+            string TrailLicenseUrl = "https://sdk.docutain.com/TrialLicense?Source=66048";
+
             //initialize the Docutain SDK with your license key
-            if (!Docutain.SDK.Windows.DocutainSDK.InitSDK("<YOUR-LICENSE-KEY>", System.IO.Path.GetTempPath()))
+            if (!Docutain.SDK.Windows.DocutainSDK.InitSDK(License_Key, System.IO.Path.GetTempPath()))
             {
                 WriteState("SDK initialization failed");
-                WriteState("No valid LICENSE-KEY");
-                tbOutput.Text = "In order to get a trial license, please contact us via sdk@Docutain.com.";
                 btLoadDocument.IsEnabled = false;
-                MessageBox.Show(Docutain.SDK.Windows.DocutainSDK.GetLastError());
+
+                if (License_Key == "<YOUR-LICENSE-KEY>")
+                {
+                    MessageBoxResult rc = MessageBox.Show("A valid trial license key is required. You can generate a trial license key on our website.", "Trial license needed", MessageBoxButton.YesNo);
+
+                    if (rc == MessageBoxResult.Yes)
+                        ShowBrowser(TrailLicenseUrl);
+
+                    WriteState("No valid LICENSE-KEY");
+                    tbOutput.Text = "License_Key = <YOUR-LICENSE-KEY> in MainWindows.xaml.cs must be replaced with your trial license key.\n\nYou can generate a trial license key on our website.\n"+ TrailLicenseUrl;
+                }
+                else
+                {
+                    MessageBox.Show(Docutain.SDK.Windows.DocutainSDK.GetLastError());
+                }
             }
             else
             {
                 WriteState("SDK initialized");
             }
+        }
+
+        public static void ShowBrowser(string url)
+        {
+            var ps = new ProcessStartInfo(url)
+            {
+                UseShellExecute = true,
+                Verb = "open"
+            };
+
+            Process.Start(ps);
         }
 
         private void EnableButtons(bool Enable)
